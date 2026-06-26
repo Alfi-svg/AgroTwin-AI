@@ -1,0 +1,1 @@
+import{j as n}from"./three-CqVsWKbh.js";const i={optimal:"Optimal",warning:"Warning",critical:"Critical"};function r(t){return`status-${t}`}function c(t,a=0,s=100){return Math.min(Math.max(t,a),s)}function u({status:t,label:a}){return n.jsx("span",{className:`status-pill ${r(t)}`,children:a??i[t]})}export{u as S,c};

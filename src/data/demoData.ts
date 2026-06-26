@@ -1,0 +1,114 @@
+import type { AlertItem, SensorMarker, SensorMetric, SensorPoint, Warehouse } from '../types';
+
+export const dashboardMetrics: SensorMetric[] = [
+  { label: 'Storage Health Score', value: 91, unit: '%', status: 'optimal', delta: '+4.2%', target: 'Target > 85%' },
+  { label: 'Spoilage Risk Score', value: 18, unit: '%', status: 'warning', delta: '-2.7%', target: 'Target < 20%' },
+  { label: 'Temperature', value: 24.6, unit: '°C', status: 'optimal', delta: '+0.3°C', target: '22–26°C' },
+  { label: 'Humidity', value: 68, unit: '%', status: 'warning', delta: '+3.1%', target: '55–65%' },
+  { label: 'Gas Level', value: 742, unit: 'ppm', status: 'warning', delta: '+24ppm', target: '< 700ppm' },
+  { label: 'Moisture', value: 14.8, unit: '%', status: 'optimal', delta: '-0.8%', target: '12–16%' },
+  { label: 'Air Quality', value: 42, unit: 'AQI', status: 'optimal', delta: '-6', target: '< 50 AQI' },
+  { label: 'Active Alerts', value: 5, unit: '', status: 'critical', delta: '+2', target: '0 critical' },
+];
+
+export const trendData: SensorPoint[] = [
+  { time: '00:00', temperature: 22.9, humidity: 61, spoilage: 9, efficiency: 93, moisture: 12.2, gas: 540 },
+  { time: '02:00', temperature: 23.1, humidity: 62, spoilage: 10, efficiency: 92, moisture: 12.8, gas: 562 },
+  { time: '04:00', temperature: 23.7, humidity: 63, spoilage: 12, efficiency: 91, moisture: 13.4, gas: 604 },
+  { time: '06:00', temperature: 24.2, humidity: 65, spoilage: 14, efficiency: 89, moisture: 14.1, gas: 662 },
+  { time: '08:00', temperature: 24.9, humidity: 68, spoilage: 18, efficiency: 86, moisture: 14.8, gas: 742 },
+  { time: '10:00', temperature: 25.4, humidity: 70, spoilage: 21, efficiency: 84, moisture: 15.3, gas: 801 },
+  { time: '12:00', temperature: 26.2, humidity: 72, spoilage: 24, efficiency: 81, moisture: 16.1, gas: 846 },
+  { time: '14:00', temperature: 25.8, humidity: 71, spoilage: 22, efficiency: 83, moisture: 15.9, gas: 822 },
+  { time: '16:00', temperature: 25.1, humidity: 69, spoilage: 20, efficiency: 86, moisture: 15.1, gas: 776 },
+  { time: '18:00', temperature: 24.3, humidity: 66, spoilage: 16, efficiency: 90, moisture: 14.3, gas: 701 },
+  { time: '20:00', temperature: 23.8, humidity: 64, spoilage: 13, efficiency: 92, moisture: 13.7, gas: 631 },
+  { time: '22:00', temperature: 23.2, humidity: 62, spoilage: 11, efficiency: 94, moisture: 12.9, gas: 584 },
+];
+
+export const predictionForecast = [
+  { hour: 'Now', risk: 18, action: 'Stable', confidence: 93 },
+  { hour: '+4h', risk: 23, action: 'Increase airflow', confidence: 90 },
+  { hour: '+8h', risk: 31, action: 'Dehumidify', confidence: 88 },
+  { hour: '+12h', risk: 38, action: 'Cool zone B', confidence: 86 },
+  { hour: '+16h', risk: 29, action: 'Monitor gas', confidence: 89 },
+  { hour: '+20h', risk: 22, action: 'Stable', confidence: 91 },
+  { hour: '+24h', risk: 19, action: 'Stable', confidence: 92 },
+];
+
+export const alerts: AlertItem[] = [
+  {
+    id: 'AL-1042',
+    type: 'Critical',
+    title: 'CO₂ level rising in Zone B',
+    location: 'Warehouse A · Zone B',
+    message: 'Gas level crossed warning threshold for 21 minutes. Activate ventilation cycle.',
+    time: '2 min ago',
+    status: 'critical',
+  },
+  {
+    id: 'AL-1038',
+    type: 'Warning',
+    title: 'Humidity drift detected',
+    location: 'Warehouse C · Cold Room',
+    message: 'Humidity is trending above target range. AI suggests dehumidifier mode for 45 minutes.',
+    time: '12 min ago',
+    status: 'warning',
+  },
+  {
+    id: 'AL-1036',
+    type: 'Warning',
+    title: 'Tomato batch at medium spoilage risk',
+    location: 'Warehouse A · Rack T3',
+    message: 'Ethylene and temperature combination suggests risk increase within 8 hours.',
+    time: '29 min ago',
+    status: 'warning',
+  },
+  {
+    id: 'AL-1029',
+    type: 'Info',
+    title: 'Cooling cycle completed',
+    location: 'Warehouse B · Zone A',
+    message: 'Temperature normalized to 23.8°C after automated cooling adjustment.',
+    time: '46 min ago',
+    status: 'optimal',
+  },
+  {
+    id: 'AL-1017',
+    type: 'Info',
+    title: 'Air quality improved',
+    location: 'Warehouse D · Dry Storage',
+    message: 'AQI returned to optimal range after ventilation sequence.',
+    time: '1h ago',
+    status: 'optimal',
+  },
+];
+
+export const warehouses: Warehouse[] = [
+  { id: 'WH-A', name: 'North Agro Hub', location: 'Gazipur', crop: 'Tomato / Vegetables', health: 91, risk: 18, capacity: 78, status: 'warning' },
+  { id: 'WH-B', name: 'Delta Rice Reserve', location: 'Barisal', crop: 'Rice', health: 96, risk: 8, capacity: 64, status: 'optimal' },
+  { id: 'WH-C', name: 'Cold Chain Unit', location: 'Jashore', crop: 'Potato / Onion', health: 84, risk: 27, capacity: 82, status: 'warning' },
+  { id: 'WH-D', name: 'Eastern Smart Storage', location: 'Sylhet', crop: 'Mixed Vegetables', health: 73, risk: 42, capacity: 91, status: 'critical' },
+];
+
+export const sensorMarkers: SensorMarker[] = [
+  { id: 'S-01', name: 'Temp Core', position: [-2.2, 1.2, -0.4], value: '24.6°C', status: 'optimal' },
+  { id: 'S-02', name: 'Humidity B', position: [1.7, 1.35, -0.9], value: '68%', status: 'warning' },
+  { id: 'S-03', name: 'CO₂ Rack', position: [0.2, 1.6, 1.3], value: '742ppm', status: 'warning' },
+  { id: 'S-04', name: 'Moisture Bay', position: [-1.2, 0.95, 1.4], value: '14.8%', status: 'optimal' },
+  { id: 'S-05', name: 'Spoilage Hotspot', position: [2.3, 1.15, 0.7], value: '42%', status: 'critical' },
+];
+
+export const recommendations = [
+  'Run ventilation in Zone B for 35 minutes to reduce CO₂ accumulation.',
+  'Activate dehumidifier in cold room until humidity returns below 65%.',
+  'Move tomato rack T3 closer to low-temperature aisle within the next 4 hours.',
+  'Inspect high-ethylene produce batch and separate at-risk samples.',
+];
+
+export const assistantSuggestions = [
+  'Why is spoilage risk increasing?',
+  'Generate action plan for Zone B.',
+  'Summarize today’s alerts.',
+  'Which warehouse needs priority inspection?',
+];

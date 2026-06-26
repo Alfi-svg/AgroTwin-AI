@@ -1,0 +1,1 @@
+import{j as e}from"./three-CqVsWKbh.js";function i({eyebrow:r,title:a,description:n,action:s}){return e.jsxs("header",{className:"page-header",children:[e.jsxs("div",{children:[e.jsx("span",{className:"eyebrow",children:r}),e.jsx("h1",{children:a}),e.jsx("p",{children:n})]}),s?e.jsx("div",{className:"page-action",children:s}):null]})}export{i as P};

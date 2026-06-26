@@ -1,0 +1,3 @@
+# Hooks
+
+Primary implementation lives in `frontend/src/hooks`. This root folder is included to match the required project structure and to support future shared full-stack modules.

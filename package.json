@@ -1,0 +1,18 @@
+{
+  "name": "agrotwin-ai-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AgroTwin AI full-stack high-fidelity prototype SaaS for agentic AI and digital twin smart agricultural storage management.",
+  "scripts": {
+    "frontend:install": "cd frontend && npm install",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:preview": "cd frontend && npm run preview",
+    "backend:install": "python -m pip install -r requirements.txt",
+    "backend:dev": "python -m uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000",
+    "build": "npm run frontend:build"
+  },
+  "keywords": ["agriculture", "digital-twin", "agentic-ai", "smart-storage", "iot", "saas"],
+  "author": "AgroTwin AI Prototype",
+  "license": "MIT"
+}

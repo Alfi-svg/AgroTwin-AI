@@ -1,0 +1,20 @@
+[
+  {
+    "sensor": "TMP-A1",
+    "value": 18.4,
+    "unit": "C",
+    "status": "healthy"
+  },
+  {
+    "sensor": "HUM-A2",
+    "value": 68,
+    "unit": "%",
+    "status": "warning"
+  },
+  {
+    "sensor": "GAS-B1",
+    "value": 312,
+    "unit": "ppm",
+    "status": "healthy"
+  }
+]

@@ -1,0 +1,1 @@
+import{j as e}from"./index-BFng0-o6.js";const i={healthy:"Healthy",warning:"Warning",critical:"Critical",info:"Info"},r={healthy:"green",warning:"yellow",critical:"red",info:"blue"};function c(a,t,n){return Math.max(t,Math.min(n,a))}function l({status:a}){return e.jsx("span",{className:`status-badge ${r[a]}`,children:i[a]})}export{l as S,c};
